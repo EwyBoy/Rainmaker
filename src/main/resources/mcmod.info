@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "rainmaker",
+    "name": "Rainmaker",
+    "description": "Makes it rain",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["EwyBoy"],
+    "credits": "EwyBoy for making this mod",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
