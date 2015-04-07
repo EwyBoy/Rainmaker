@@ -21,13 +21,18 @@ import java.util.Random;
 
 public class RainMakerBlock extends Block {
 
+    //Precalculate the rain time since used as a global veriable
+    //I am getting the requested rain time from config file and multiplying by 20 since rainTime set how many gameticks it is going to rain for.
+    //20 gameticks == 1 second.
     private int rainTime = Config.rainTime * 20;
 
+    //Basic properties of the block
     public RainMakerBlock() {
         super(Material.glass);
         setHardness(1.0f);
         setCreativeTab(CreativeTabs.tabAllSearch);
     }
+    
     @SideOnly(Side.SERVER)
     public void explode(World world, int x, int y, int z) {
         //world.createExplosion(null,x,y,z,3f,false);
