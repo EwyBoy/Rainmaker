@@ -10,19 +10,23 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import org.lwjgl.opengl.GL11;
 
+//Importing ISimpleBlockRenderingHanlder to privide me with tools to render out the block in inventory and the world.
 public class RainMakerRender implements ISimpleBlockRenderingHandler {
-
+    
+    //Render ID assigned to bind this render class to the block itself.
     public int renderID;
-
+    
     public RainMakerRender() {
-        renderID = RenderingRegistry.getNextAvailableRenderId();
+        renderID = RenderingRegistry.getNextAvailableRenderId(); //Gets a avaiable render ID. Usefull when you have multiple mods install so render ID's won't complict.
     }
-
+    
+    //Here I am rendering the block in the players hand, inventory and when droped on the ground as an entity.
     @Override
     public void renderInventoryBlock(Block block, int metadata, int modelId, RenderBlocks renderer) {
-
+        
         Tessellator tessellator = Tessellator.instance;
-
+        
+        //Centers the entity and posisioning it corectly. 
         GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
 
         tessellator.startDrawingQuads();
